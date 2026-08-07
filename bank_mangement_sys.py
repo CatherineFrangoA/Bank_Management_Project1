@@ -5,9 +5,10 @@ while True:
     print("1. Create Account")
     print("2. Show All Accounts")
     print("3. Deposit")
-    print("4.Withdraw")
-    print("5.Check Balance")
-    print("6. Exit")
+    print("4. Withdraw")
+    print("5. Check Balance")
+    print("6. Search Account")
+    print("7. Exit")
     choice = input("Enter your choice: ")
     if choice == "1":
         name = input("Enter Customer Name: ")
@@ -59,6 +60,16 @@ while True:
         else:
             print("Account Not Found")
     elif choice == "6":
+        acc_no = int(input("Enter Account Number: "))
+
+        if acc_no in accounts:
+            print("\n===== ACCOUNT DETAILS =====")
+            print("Account Number :", acc_no)
+            print("Customer Name  :", accounts[acc_no]["name"])
+            print("Balance        :", accounts[acc_no]["balance"])
+        else:
+            print("Account Not Found")
+    elif choice == "7":
         print("Thank You")
         break
     else:
