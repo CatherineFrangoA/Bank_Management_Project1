@@ -8,7 +8,8 @@ while True:
     print("4. Withdraw")
     print("5. Check Balance")
     print("6. Search Account")
-    print("7. Exit")
+    print("7. Delete Account")
+    print("8. Exit")
     choice = input("Enter your choice: ")
     if choice == "1":
         name = input("Enter Customer Name: ")
@@ -69,7 +70,15 @@ while True:
             print("Balance        :", accounts[acc_no]["balance"])
         else:
             print("Account Not Found")
-    elif choice == "7":
+    elif choice == "6":
+        acc_no = int(input("Enter Account Number to Delete: "))
+
+        if acc_no in accounts:
+            del accounts[acc_no]
+            print("Account Deleted Successfully")
+        else:
+            print("Account Not Found")
+    elif choice == "8":
         print("Thank You")
         break
     else:
