@@ -22,15 +22,15 @@ while True:
         print("Account Number:", next_id)
         next_id = next_id + 1
     elif choice == "2":
-        if len(accounts) == 0:
+        if not accounts:
             print("No Accounts Found")
         else:
-            print("\nAccount Details")
-            for acc_no, account in accounts.items():
-                print("Account No :", acc_no)
-                print("Name :", account["name"])
-                print("Balance :", account["balance"])
-                print()
+            print("===== ALL ACCOUNTS =====")
+            for account_id, account in accounts.items():
+                print("Account Number:", account_id)
+                print("Customer Name:", account["name"])
+                print("Balance:", account["balance"])
+                print("----------------------")
     elif choice == "3":
         acc_no = int(input("Enter Account Number: "))
         account = accounts.get(acc_no)
